@@ -1,0 +1,104 @@
+.floating-circles {
+  display: none;
+  position: absolute; 
+  top: 58px; 
+  left: 156px;   
+  width: 128px;
+  height: 128px;
+  @include scale(0.6);
+}
+
+.f_circleG{
+  position: absolute;
+  background-color: #FFFFFF;
+  height: 23px;
+  width: 23px;
+  @include border-radius(12px);
+  -moz-animation-name: f_fadeG;
+  -moz-animation-duration: 1.04s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: linear;
+  -webkit-animation-name: f_fadeG;
+  -webkit-animation-duration: 1.04s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: linear;
+  -ms-animation-name: f_fadeG;
+  -ms-animation-duration: 1.04s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-direction: linear;
+  -o-animation-name: f_fadeG;
+  -o-animation-duration: 1.04s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-direction: linear;
+  animation-name: f_fadeG;
+  animation-duration: 1.04s;
+  animation-iteration-count: infinite;
+  animation-direction: linear;
+}
+
+@mixin animation-delay($delay) {
+  -moz-animation-delay: $delay;
+  -webkit-animation-delay: $delay;
+  -ms-animation-delay: $delay;
+  -o-animation-delay: $delay;
+  animation-delay: $delay;
+}
+
+@mixin keyframes() {
+  0% { background-color: #999999; }
+  100% { background-color: #FFFFFF; }  
+}
+
+#frotateG_01 {
+  left:0;
+  top:52px;
+  @include animation-delay(0.39s);
+}
+
+#frotateG_02{
+  left:15px;
+  top:15px;
+  @include animation-delay(0.52s);
+}
+
+#frotateG_03{
+  left:52px;
+  top:0;
+  @include animation-delay(0.65s);
+}
+
+#frotateG_04{
+  right:15px;
+  top:15px;
+  @include animation-delay(0.78s);
+}
+
+#frotateG_05{
+  right:0;
+  top:52px;
+  @include animation-delay(0.91s);
+}
+
+#frotateG_06{
+  right:15px;
+  bottom:15px;
+  @include animation-delay(1.04s);
+}
+
+#frotateG_07{
+  left:52px;
+  bottom:0;
+  @include animation-delay(1.17s);
+}
+
+#frotateG_08{
+  left:15px;
+  bottom:15px;
+  @include animation-delay(1.3s);
+}
+
+@-moz-keyframes f_fadeG { @include keyframes(); }
+@-webkit-keyframes f_fadeG { @include keyframes(); }
+@-ms-keyframes f_fadeG { @include keyframes(); }
+@-o-keyframes f_fadeG { @include keyframes(); }
+@keyframes f_fadeG { @include keyframes(); }

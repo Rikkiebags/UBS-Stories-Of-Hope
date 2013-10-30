@@ -1,0 +1,64 @@
+@import "compass/css3/box-shadow";
+@import "compass/css3/filter";
+@import "compass/css3/transition";
+@import "compass/css3/transform";
+@import "compass/utilities/general/clearfix";
+
+//@import "icons/*.png";
+
+$levato-med-italic: 'LevatoW01-MediumItalic';
+$levato-med: 'Levato W01 Medium';
+
+$red: #c60023;
+
+body {
+  font-family: $levato-med;
+  color: white;
+}
+
+.parallax-viewport {
+  width: 100%;
+  max-width: 960px;
+  height: 612px;
+  background-color: #aebcc9;
+  background-image: url('../images/bg.jpg');
+  position: relative;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  pointer-events:none;
+}
+
+img {
+  position: absolute;
+  cursor: pointer;
+  pointer-events:all;
+  @include transition(all 250ms ease-out);
+  @include transform(scale(.7));
+  
+  border: 2px solid white;   
+  &.active, &:hover {
+    border: 2px solid $red;
+    @include transform(scale(1));
+  }      
+}
+    
+.story {
+  position: absolute;
+}
+
+.rollover {
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: $red;
+  display: none;
+  opacity: .8;
+  padding: 20px;
+  overflow: hidden;
+  border: 2px solid $red;
+  
+  h2 {margin-top: 0}
+}

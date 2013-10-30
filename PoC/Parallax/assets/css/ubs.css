@@ -1,0 +1,205 @@
+/* line 16, ../sass/ubs.scss */
+body {
+  margin: 0;
+  min-width: 980px;
+  padding: 0;
+  font-family: "Levato W01 Medium";
+  color: white;
+}
+
+/* line 24, ../sass/ubs.scss */
+img {
+  border: 0;
+}
+
+/* line 28, ../sass/ubs.scss */
+h1 {
+  color: #c60023;
+  font-size: 32px;
+  font-family: "LevatoW01-MediumItalic";
+}
+
+/* line 34, ../sass/ubs.scss */
+p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* line 39, ../sass/ubs.scss */
+a, a:link, a:visited, a:active {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+/* line 45, ../sass/ubs.scss */
+a:hover, a:link:hover, a:visited:hover, a:active:hover {
+  border-bottom: 1px solid #fff;
+}
+
+/* line 50, ../sass/ubs.scss */
+.highlight {
+  color: #c60023;
+  font-weight: bold;
+}
+
+/* line 56, ../sass/ubs.scss */
+#nav {
+  list-style: none;
+  position: fixed;
+  left: 20px;
+  z-index: 1000;
+}
+/* line 62, ../sass/ubs.scss */
+#nav li {
+  margin: 0 0 15px 0;
+}
+
+/* line 67, ../sass/ubs.scss */
+.bg {
+  margin: 0 auto;
+  padding: 0;
+  position: absolute;
+  width: 980px;
+  z-index: 200;
+  pointer-events: none;
+}
+
+/* line 76, ../sass/ubs.scss */
+#section1 {
+  background: url("../images/bg1.jpg") 50% 0 no-repeat fixed;
+  height: 728px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  padding-top: 50px;
+}
+/* line 84, ../sass/ubs.scss */
+#section1 .bg {
+  background: url("../images/stories/txt1.png") 50% 0 no-repeat fixed;
+  height: 800px;
+}
+/* line 89, ../sass/ubs.scss */
+#section1 .hero-story {
+  background-color: #fff;
+  color: #000;
+  padding: 20px;
+  margin-bottom: 4px;
+  width: 400px;
+}
+
+/* line 99, ../sass/ubs.scss */
+#section2 {
+  background: url("../images/bg2.jpg") 50% 0 no-repeat fixed;
+  height: 839px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0;
+}
+/* line 106, ../sass/ubs.scss */
+#section2 .bg {
+  background: url("../images/stories/txt2.png") 50% 0 no-repeat fixed;
+  height: 800px;
+}
+
+/* line 112, ../sass/ubs.scss */
+#section3 {
+  background: url("../images/bg3.jpg") 50% 0 no-repeat fixed;
+  height: 735px;
+  overflow: hidden;
+}
+/* line 117, ../sass/ubs.scss */
+#section3 .bg {
+  background: url("../images/stories/txt3.png") 50% 0 no-repeat fixed;
+  height: 800px;
+}
+
+/* line 123, ../sass/ubs.scss */
+#section4 {
+  background: url("../images/bg4.jpg") 50% 0 no-repeat fixed;
+  height: 840px;
+  overflow: hidden;
+}
+/* line 128, ../sass/ubs.scss */
+#section4 .bg {
+  background: url("../images/stories/txt4.png") 50% 0 no-repeat fixed;
+  height: 800px;
+}
+
+/* line 134, ../sass/ubs.scss */
+.stories {
+  margin: 0 auto;
+  min-width: 980px;
+  width: 980px;
+  position: relative;
+}
+/* line 141, ../sass/ubs.scss */
+.stories ul {
+  width: 50%;
+  float: left;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* line 148, ../sass/ubs.scss */
+.stories ul.left {
+  padding-right: 2px;
+}
+/* line 150, ../sass/ubs.scss */
+.stories ul.left li {
+  list-style-type: none;
+  text-align: right;
+}
+/* line 154, ../sass/ubs.scss */
+.stories ul.left .story {
+  float: right;
+}
+/* line 156, ../sass/ubs.scss */
+.stories ul.right {
+  padding-left: 2px;
+}
+/* line 158, ../sass/ubs.scss */
+.stories ul.right li {
+  list-style-type: none;
+  text-align: left;
+}
+/* line 162, ../sass/ubs.scss */
+.stories ul.right .story {
+  float: left;
+}
+/* line 166, ../sass/ubs.scss */
+.stories .story {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  margin-bottom: 4px;
+  *zoom: 1;
+}
+/* line 38, Q:/Dropbox/Compass/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.stories .story:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 173, ../sass/ubs.scss */
+.stories .story img {
+  display: block;
+}
+/* line 177, ../sass/ubs.scss */
+.stories .story .rollover {
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: #c60023;
+  display: none;
+  opacity: .8;
+  box-sizing: border-box;
+  padding: 20px;
+}
+/* line 187, ../sass/ubs.scss */
+.stories .story .rollover h2 {
+  margin-top: 0;
+}

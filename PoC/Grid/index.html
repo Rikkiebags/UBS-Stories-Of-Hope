@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    
+    <title>UBS</title>
+    
+    <script>document.documentElement.className = 'js';</script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="assets/css/ubs.css" />
+    <link rel="stylesheet" href="demos/css/jquery.parallax.css" />
+
+</head>
+
+<body>
+    <div class="parallax-viewport" id="parallax"></div>
+    
+  <!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script-->
+    <script src="assets/js/jquery-2.0.2.min.js"></script>
+    <script src="assets/js/jquery-ui-1.10.3.custom.min.js"></script>  
+  <script src="demos/js/jquery.parallax.js"></script>
+  <script>
+  $(document).ready(function(){
+
+      var data = {
+        "story" : [{
+            "name" : "Lorem ipsum",
+            "image" : "assets/images/1.jpg",
+            "top" : 79,
+            "left" : 100
+        }, {
+            "name" : "Lorem ipsum",
+            "image" : "assets/images/2.jpg",
+            "top" : 103,
+            "left" : 325
+        }, {
+            "name" : "Lorem ipsum",
+            "image" : "assets/images/3.jpg",
+            "top" : 193,
+            "left" : 325
+        }, {
+            "name" : "Lorem ipsum",
+            "image" : "assets/images/4.jpg",
+            "top" : 268,
+            "left" : 126
+        }, {
+            "name" : "Lorem ipsum",
+            "image" : "assets/images/5.jpg",
+            "top" : 268,
+            "left" : 356
+        }, {
+            "name" : "Lorem ipsum",
+            "image" : "assets/images/6.jpg",
+            "top" : 301,
+            "left" : 195
+        }, {
+            "name" : "Lorem ipsum",
+            "image" : "assets/images/7.jpg",
+            "top" : 477,
+            "left" : 224
+        }, {
+            "name" : "Lorem ipsum",
+            "image" : "assets/images/8.jpg",
+            "top" : 431,
+            "left" : 326
+        }, {
+            "name" : "Lorem ipsum",
+            "image" : "assets/images/9jpg",
+            "top" : 350,
+            "left" : 397
+        }, {
+            "name" : "Lorem ipsum",
+            "image" : "assets/images/10.jpg",
+            "top" : 418,
+            "left" : 451
+        }, {
+            "name" : "Lorem ipsum",
+            "image" : "assets/images/11.jpg",
+            "top" : 488,
+            "left" : 398
+        }, {
+            "name" : "Lorem ipsum",
+            "image" : "assets/images/12.jpg",
+            "top" : 480,
+            "left" : 539
+        }, {
+            "name" : "Lorem ipsum",
+            "image" : "assets/images/13.jpg",
+            "top" : 462,
+            "left" : 608
+        }, {
+            "name" : "Lorem ipsum",
+            "image" : "assets/images/14.jpg",
+            "top" : 355,
+            "left" : 641
+        }, {
+            "name" : "Lorem ipsum",
+            "image" : "assets/images/15.jpg",
+            "top" : 430,
+            "left" : 664
+        }, {
+            "name" : "Lorem ipsum",
+            "image" : "assets/images/16.jpg",
+            "top" : 360,
+            "left" : 814
+        }, {
+            "name" : "Lorem ipsum",
+            "image" : "assets/images/17.jpg",
+            "top" : 486,
+            "left" : 732
+        }, {
+            "name" : "Lorem ipsum",
+            "image" : "assets/images/18.jpg",
+            "top" : 384,
+            "left" : 808
+        }]
+    };
+    var zIndexTop = 100;
+    
+    for (x = 0; x < data.story.length; x++) 
+    {
+        var $imgContainer = $('<div/>', {
+            css: {
+                left: data.story[x].left,
+                top: data.story[x].top
+            },
+            class: 'story'
+        });
+        
+        var $img = $('<img/>', {
+            src: 'assets/images/' + (x+1) + '.jpg',
+            class: 'thumb thumb' + x
+        })
+        .mouseenter(function() {
+            bringToFront($(this));
+            bringToFront($(this).parent().find(".rollover"));
+            $(this).parent().find(".rollover").stop(true, true).delay(500).slideDown();            
+        })
+        .mouseleave(function() {
+            $(this).parent().find(".rollover").stop(true, true).hide();            
+        })
+        
+        .click(function() {
+            //console.log($(this).attr('class'));
+            //bringToFront($(this));
+        });
+        
+        var $div = $('<div/>', {
+            css: {
+                width: 1000 + Math.floor(Math.random()*25),
+                height: 600 + Math.floor(Math.random()*25)
+            },
+            class: 'parallax-layer img' + x
+        })
+        .click(function() {
+            //console.log($(this).attr('class'));
+            bringToFront($(this));
+        });
+        $imgContainer.append($img);
+        $div.append($imgContainer).appendTo("#parallax");
+    }    
+    
+    jQuery('#parallax .parallax-layer')
+    .parallax({
+      mouseport: jQuery('#parallax')
+    });
+    
+        function bringToFront($obj) {
+            //console.log($obj.attr('class'));
+            $obj.css({'z-index': zIndexTop});
+            zIndexTop++;
+        }
+        
+        
+    $(".parallax-layer img").load(function() {
+        var $target = $(this).parent();
+        var $img = $(this);
+        //console.log($img.attr("src"));
+        //console.log($target.height());
+        //$target.hide();
+        //console.log("woo");
+        var $content = $('<div/>', {
+            html: '<h2>Arbie\'s Story</h2><p><strong>Teach for the Philippines</strong></p><p>Philippines</p>',
+            height: $img.height() - 40,
+            width: $img.width() - 40,
+            //top: $img.height() / 2,
+            css: {
+                //left: posX,
+                //top: $img.height() / 2
+                //width: baseWidth * scale,
+                //zIndex: zIndex
+            },
+            class: 'rollover'
+        });
+        $target.append($content);
+
+    })          
+          
+    
+  });
+  </script>
+</body>
+</html>

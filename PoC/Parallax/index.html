@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>UBS</title>
+<link href="assets/css/ubs.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="http://fast.fonts.com/jsapi/d4aed7c1-d449-4171-a82c-7ac87594a56f.js"></script>
+
+<script type="text/javascript" src="scripts/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="scripts/jquery.parallax-1.1.3.js"></script>
+<script type="text/javascript" src="scripts/jquery.localscroll-1.2.7-min.js"></script>
+<script type="text/javascript" src="scripts/jquery.scrollTo-1.4.2-min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    
+	$('#nav').localScroll(800);
+	
+	//.parallax(xPosition, speedFactor, outerHeight) options:
+	//xPosition - Horizontal position of the element
+	//inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
+	//outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
+	$('#section1').parallax("50%", 0.1);
+	$('#section1 .bg').parallax("30%", 0.5);
+	
+	$('#section2').parallax("50%", 0.2);
+	$('#section2 .bg').parallax("70%", 0.6);
+	
+	$('#section3').parallax("50%", 0.2);
+	$('#section3 .bg').parallax("30%", 0.5);
+	
+	$('#section4').parallax("50%", 0.1);
+	$('#section4 .bg').parallax("70%", 0.4);
+	
+    $(".story img").load(function() {
+        var $target = $(this).parent();
+        var $img = $(this);
+        //console.log($img.attr("src"));
+        //console.log($target.height());
+        //$target.hide();
+        //console.log("woo");
+        var $content = $('<div/>', {
+            html: '<h2>Arbie\'s Story</h2><p><strong>Teach for the Philippines</strong></p><p>Philippines</p>',
+            height: $img.height(),
+            width: $img.width(),
+            //top: $img.height() / 2,
+            css: {
+                //left: posX,
+                //top: $img.height() / 2
+                //width: baseWidth * scale,
+                //zIndex: zIndex
+            },
+            class: 'rollover'
+        })
+        $target.append($content)
+
+    })	
+    
+    $(".story").mouseenter(function() {
+        $(this).find(".rollover").stop(true, true).slideDown();
+        
+    })
+    .mouseleave(function() {
+        $(this).find(".rollover").stop(true, true).slideUp();
+    });
+	
+	
+	/*$(".story").each(function() {
+	    var $target = $(this);
+	    var $img = $target.find("img");
+	    console.log($img.attr("src"));
+	    console.log($target.height());
+        //$target.hide();
+        //console.log("woo");
+        var $content = $('<div/>', {
+            text: 'This is Tabitha from Wimborne',
+            class: 'rollover'
+        });
+        $target.append($content)
+
+	})*/
+	
+	$(".story").mouseover(function() {
+	    
+	    
+	});
+
+})
+</script>
+</head>
+
+<body>
+	<ul id="nav">
+	    <li><strong>Projects</strong></li>
+		<li><a href="#section1" title="Next Section">Philippines</a></li>
+	    <li><a href="#section2" title="Next Section">China </a></li>
+	    <li><a href="#section3" title="Next Section">South Africa</a></li>
+	    <li><a href="#section4" title="Next Section">Peru</a></li>
+	</ul>
+	
+	<div id="section1">
+		<div class="stories">
+		    <div class="bg"></div>
+		    <ul class="left">
+		        <li><div class="story"><img src="assets/images/stories/3.jpg" /></div></li>
+		        <li><div class="story"><img src="assets/images/stories/13.jpg" /></div></li>
+		        <li><div class="story"><img src="assets/images/stories/2.jpg" /></div></li>
+		    </ul>
+            <ul class="right">
+                <li class="hero-story">
+                    <h1>Stories of hope</h1>
+                    <p>Changing the lives of children through education, health and protection</p>
+                    <p class="highlight">Choose a storyteller</p>
+                </li>
+                <li><div class="story"><img src="assets/images/stories/11.jpg" /></div></li>
+                <li><div class="story"><img src="assets/images/stories/4.jpg" /></div></li>
+            </ul>
+	    </div> 
+	</div> 
+	
+	<div id="section2">
+		<div class="stories">
+		    <div class="bg"></div>
+            <ul class="left">
+                <li><div class="story"><img src="assets/images/stories/12.jpg" /></div></li>
+                <li><div class="story"><img src="assets/images/stories/8.jpg" /></div></li>
+                <li><div class="story"><img src="assets/images/stories/1.jpg" /></div></li>
+            </ul>
+            <ul class="right">
+                <li><div class="story"><img src="assets/images/stories/10.jpg" /></div></li>
+                <li><div class="story"><img src="assets/images/stories/6.jpg" /></div></li>
+            </ul>
+	    </div> 
+	</div> 
+	
+	<div id="section3">
+		<div class="stories">
+		    <div class="bg"></div>
+            <ul class="left">
+                <li><div class="story"><img src="assets/images/stories/7.jpg" /></div></li>
+                <li><div class="story"><img src="assets/images/stories/3.jpg" /></div></li>
+                <li><div class="story"><img src="assets/images/stories/13.jpg" /></div></li>
+            </ul>
+            <ul class="right">
+                <li><div class="story"><img src="assets/images/stories/5.jpg" /></div></li>
+                <li><div class="story"><img src="assets/images/stories/9.jpg" /></div></li>
+            </ul>
+	    </div>
+	</div> 
+	
+    <div id="section4">
+        <div class="stories">
+            <div class="bg"></div>
+            <ul class="left">
+                <li><div class="story"><img src="assets/images/stories/12.jpg" /></div></li>
+                <li><div class="story"><img src="assets/images/stories/8.jpg" /></div></li>
+                <li><div class="story"><img src="assets/images/stories/1.jpg" /></div></li>
+            </ul>
+            <ul class="right">
+                <li><div class="story"><img src="assets/images/stories/11.jpg" /></div></li>
+                <li><div class="story"><img src="assets/images/stories/4.jpg" /></div></li>
+            </ul>
+            <div style="clear:both"></div>
+        </div> 
+    </div> 
+	
+</body>
+</html>

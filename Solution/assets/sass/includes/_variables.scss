@@ -1,0 +1,51 @@
+$width: 960px;
+$height: 612px;
+
+$ubs-font: 'UBSHeadlineRegular';
+$body-font: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+
+$color-straw: #f1e4ba; 
+$color-red: #e60000;
+$color-text: #222;
+
+$colors: 'carbon' #646464, 
+  'plum' #5a6f89, 
+  'pine' #3b8085, 
+  'olive' #6a7d39, 
+  'terracotta' #a36650, 
+  'atlantic' #427c99, 
+  'chestnut' #9a3d37, 
+  'clay' #807266, 
+  'chocolate' #585148, 
+  'straw' #f1e4ba;
+
+@font-face{
+  font-family: $ubs-font;
+  font-style: italic;
+  font-weight: normal;
+  src: url("http://www.static-ubs.com/css/type/ubsheadline-italic-webfont.eot");
+  src: url("http://www.static-ubs.com/css/type/ubsheadline-italic-webfont.eot?#iefix") format('embedded-opentype'),
+    url("http://www.static-ubs.com/css/type/ubsheadline-italic-webfont.woff") format("woff"),
+    url("http://www.static-ubs.com/css/type/ubsheadline-italic-webfont.ttf") format("truetype"),
+    url("http://www.static-ubs.com/css/type/ubsheadline-italic-webfont.svg#webfontaSnZxOwe") format("svg");
+}
+    
+@font-face{
+  font-family: $ubs-font;
+  font-style: normal;
+  font-weight: normal;
+  src: url("http://www.static-ubs.com/css/type/ubsheadline-webfont.eot");
+  src: url("http://www.static-ubs.com/css/type/ubsheadline-webfont.eot?#iefix") format('embedded-opentype'),
+    url("http://www.static-ubs.com/css/type/ubsheadline-webfont.woff") format("woff"),
+    url("http://www.static-ubs.com/css/type/ubsheadline-webfont.ttf") format("truetype"),
+    url("http://www.static-ubs.com/css/type/ubsheadline-webfont.svg#webfontT8QtMsTP") format("svg");
+}
+
+@each $color in $colors {
+  .bg-#{nth($color, 1)} {
+    background-color: nth($color, 2);
+  }
+  .#{nth($color, 1)} {
+    color: nth($color, 2);
+  }
+}

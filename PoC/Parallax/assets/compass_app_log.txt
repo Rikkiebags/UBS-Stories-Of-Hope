@@ -1,0 +1,168 @@
+2013-06-25 15:26:37     error sass/ubs.scss (Line 87: Undefined mixin 'icons-sprite'.)
+2013-06-25 15:26:37    create css/ubs.css 
+2013-06-25 15:27:21 overwrite css/ubs.css 
+2013-06-25 15:28:28 overwrite css/ubs.css 
+2013-06-25 15:28:50 overwrite css/ubs.css 
+2013-06-25 15:29:08 overwrite css/ubs.css 
+2013-06-25 15:29:25 overwrite css/ubs.css 
+2013-06-25 15:29:47 overwrite css/ubs.css 
+2013-06-25 15:29:50 identical css/ubs.css 
+2013-06-25 15:30:02 overwrite css/ubs.css 
+2013-06-25 15:30:07 overwrite css/ubs.css 
+2013-06-25 15:31:31 overwrite css/ubs.css 
+2013-06-25 15:43:22     error sass/ubs.scss (Line 7: Invalid CSS after "$levato-med ": expected ":", was "= 'LevatoW01-Me...")
+2013-06-25 15:43:22 overwrite css/ubs.css 
+2013-06-25 15:43:41     error sass/ubs.scss (Line 7: Invalid CSS after "$levato-med ": expected ":", was "= 'LevatoW01-Me...")
+2013-06-25 15:43:41 identical css/ubs.css 
+2013-06-25 15:55:41     error sass/ubs.scss (Line 7: Invalid CSS after "$levato-med ": expected ":", was "= 'LevatoW01-Me...")
+2013-06-25 15:55:41 identical css/ubs.css 
+2013-06-25 15:55:50     error sass/ubs.scss (Line 7: Invalid CSS after "$levato-med ": expected ":", was "= 'LevatoW01-Me...")
+2013-06-25 15:55:50 identical css/ubs.css 
+2013-06-25 15:56:22 overwrite css/ubs.css 
+2013-06-25 15:56:49 identical css/ubs.css 
+2013-06-25 15:57:14 overwrite css/ubs.css 
+2013-06-25 16:03:35 overwrite css/ubs.css 
+2013-06-25 16:03:38 identical css/ubs.css 
+2013-06-25 16:08:17 overwrite css/ubs.css 
+2013-06-25 16:08:37 overwrite css/ubs.css 
+2013-06-25 16:17:31 overwrite css/ubs.css 
+2013-06-25 16:26:07 overwrite css/ubs.css 
+2013-06-25 16:26:58 overwrite css/ubs.css 
+2013-06-25 16:27:00 overwrite css/ubs.css 
+2013-06-25 16:28:08 overwrite css/ubs.css 
+2013-06-25 16:28:22 overwrite css/ubs.css 
+2013-06-25 16:31:34 overwrite css/ubs.css 
+2013-06-25 16:31:49 overwrite css/ubs.css 
+2013-06-25 16:39:57 overwrite css/ubs.css 
+2013-06-25 16:40:05 overwrite css/ubs.css 
+2013-06-25 16:40:11 overwrite css/ubs.css 
+2013-06-25 16:58:08 overwrite css/ubs.css 
+2013-06-25 17:01:44 overwrite css/ubs.css 
+2013-06-25 17:02:04 overwrite css/ubs.css 
+2013-06-25 17:02:07 overwrite css/ubs.css 
+2013-06-25 17:02:31 overwrite css/ubs.css 
+2013-06-25 17:03:11 overwrite css/ubs.css 
+2013-06-25 17:08:55 overwrite css/ubs.css 
+2013-06-25 17:09:05 overwrite css/ubs.css 
+2013-06-25 17:10:45 overwrite css/ubs.css 
+2013-06-25 17:11:38 overwrite css/ubs.css 
+2013-06-25 17:11:52 overwrite css/ubs.css 
+2013-06-25 17:12:04 overwrite css/ubs.css 
+2013-06-25 17:12:19 overwrite css/ubs.css 
+2013-06-25 17:12:36 overwrite css/ubs.css 
+2013-06-25 17:13:19 overwrite css/ubs.css 
+2013-06-25 17:13:47 overwrite css/ubs.css 
+2013-06-25 17:13:58 overwrite css/ubs.css 
+2013-06-25 17:14:10 overwrite css/ubs.css 
+2013-06-25 17:14:44 overwrite css/ubs.css 
+2013-06-25 17:15:47 overwrite css/ubs.css 
+2013-06-25 17:16:43 overwrite css/ubs.css 
+2013-06-25 17:16:49 overwrite css/ubs.css 
+2013-06-25 17:17:16 overwrite css/ubs.css 
+2013-06-25 17:17:41 overwrite css/ubs.css 
+2013-06-25 17:17:49 overwrite css/ubs.css 
+2013-06-25 17:17:55 overwrite css/ubs.css 
+2013-06-25 17:18:02 overwrite css/ubs.css 
+2013-06-25 17:19:25 overwrite css/ubs.css 
+2013-06-25 17:19:44 overwrite css/ubs.css 
+2013-06-25 17:22:28     error sass/ubs.scss (Line 53: Invalid CSS after "  padding-top:50px": expected ";", was ".bg {")
+2013-06-25 17:22:28 overwrite css/ubs.css 
+2013-06-25 17:22:31     error sass/ubs.scss (Line 53: Invalid CSS after "...dding-top: 50px": expected ";", was ".bg {")
+2013-06-25 17:22:31 overwrite css/ubs.css 
+2013-06-25 17:22:34 overwrite css/ubs.css 
+2013-06-25 17:24:46 overwrite css/ubs.css 
+2013-06-25 17:25:05 overwrite css/ubs.css 
+2013-06-25 17:25:08 overwrite css/ubs.css 
+2013-06-25 17:25:17 overwrite css/ubs.css 
+2013-06-25 17:25:29 overwrite css/ubs.css 
+2013-06-25 17:25:41 overwrite css/ubs.css 
+2013-06-25 17:26:44 overwrite css/ubs.css 
+2013-06-25 17:26:46 identical css/ubs.css 
+2013-06-25 17:27:28     error sass/ubs.scss (Line 67: Invalid CSS after "      color:": expected expression (e.g. 1px, bold), was "}")
+2013-06-25 17:27:28 overwrite css/ubs.css 
+2013-06-25 17:27:49     error sass/ubs.scss (Line 67: Invalid CSS after "      color:": expected expression (e.g. 1px, bold), was "}")
+2013-06-25 17:27:49 identical css/ubs.css 
+2013-06-25 17:28:28     error sass/ubs.scss (Line 68: Invalid CSS after "      color:": expected expression (e.g. 1px, bold), was "}")
+2013-06-25 17:28:28 overwrite css/ubs.css 
+2013-06-25 17:28:32 overwrite css/ubs.css 
+2013-06-25 17:28:58 overwrite css/ubs.css 
+2013-06-25 17:29:14 overwrite css/ubs.css 
+2013-06-25 17:29:23 overwrite css/ubs.css 
+2013-06-25 17:29:37 overwrite css/ubs.css 
+2013-06-25 17:29:40 identical css/ubs.css 
+2013-06-25 17:29:58 overwrite css/ubs.css 
+2013-06-25 17:30:52 overwrite css/ubs.css 
+2013-06-25 17:31:04 overwrite css/ubs.css 
+2013-06-25 17:31:29     error sass/ubs.scss (Line 19: Invalid CSS after "  font-family: ": expected expression (e.g. 1px, bold), was "$$levato-med-it...")
+2013-06-25 17:31:29 overwrite css/ubs.css 
+2013-06-25 17:31:46 overwrite css/ubs.css 
+2013-06-25 17:31:56 overwrite css/ubs.css 
+2013-06-25 17:32:10 overwrite css/ubs.css 
+2013-06-25 17:32:53 overwrite css/ubs.css 
+2013-06-25 17:33:58 overwrite css/ubs.css 
+2013-06-25 17:34:14 overwrite css/ubs.css 
+2013-06-25 17:34:16 identical css/ubs.css 
+2013-06-25 17:34:31 overwrite css/ubs.css 
+2013-06-25 17:34:43 overwrite css/ubs.css 
+2013-06-25 17:39:32 overwrite css/ubs.css 
+2013-06-25 17:41:28 overwrite css/ubs.css 
+2013-06-25 17:42:05 overwrite css/ubs.css 
+2013-06-26 10:42:42 overwrite css/ubs.css 
+2013-06-26 10:43:22 overwrite css/ubs.css 
+2013-06-26 10:44:32 overwrite css/ubs.css 
+2013-06-26 11:09:01     error sass/ubs.scss (Line 166: Invalid CSS after "}": expected "}", was "")
+2013-06-26 11:09:01 overwrite css/ubs.css 
+2013-06-26 11:09:03     error sass/ubs.scss (Line 164: Invalid CSS after "}": expected "}", was "")
+2013-06-26 11:09:03 overwrite css/ubs.css 
+2013-06-26 11:09:13 overwrite css/ubs.css 
+2013-06-26 11:09:15     error sass/ubs.scss (Line 164: Invalid CSS after "}": expected "}", was "")
+2013-06-26 11:09:15 overwrite css/ubs.css 
+2013-06-26 11:09:34 overwrite css/ubs.css 
+2013-06-26 11:12:34 overwrite css/ubs.css 
+2013-06-26 11:29:46 overwrite css/ubs.css 
+2013-06-26 11:30:43 overwrite css/ubs.css 
+2013-06-26 11:30:58 overwrite css/ubs.css 
+2013-06-26 11:33:33     error sass/ubs.scss (Line 7: Invalid CSS after "... "icons/*.png";": expected selector or at-rule, was "$levato-med-ita...")
+2013-06-26 11:33:33 overwrite css/ubs.css 
+2013-06-26 11:34:06     error sass/ubs.scss (Line 6: Invalid CSS after "...neral/clearfix"": expected selector or at-rule, was "@mixin clearfix")
+2013-06-26 11:34:06 overwrite css/ubs.css 
+2013-06-26 11:34:28 overwrite css/ubs.css 
+2013-06-26 11:35:03     error sass/ubs.scss (Line 8: Invalid CSS after "... "icons/*.png";": expected selector or at-rule, was "$levato-med-ita...")
+2013-06-26 11:35:03 overwrite css/ubs.css 
+2013-06-26 11:35:08     error sass/ubs.scss (Line 8: Invalid CSS after "... "icons/*.png";": expected selector or at-rule, was "$levato-med-ita...")
+2013-06-26 11:35:08 identical css/ubs.css 
+2013-06-26 11:35:16 overwrite css/ubs.css 
+2013-06-26 11:36:04 overwrite css/ubs.css 
+2013-06-26 11:47:04 overwrite css/ubs.css 
+2013-06-26 11:59:22 overwrite css/ubs.css 
+2013-06-26 11:59:37 overwrite css/ubs.css 
+2013-06-26 11:59:49 overwrite css/ubs.css 
+2013-06-26 11:59:56 overwrite css/ubs.css 
+2013-06-26 12:03:55 overwrite css/ubs.css 
+2013-06-26 12:04:04 overwrite css/ubs.css 
+2013-06-26 12:04:17 overwrite css/ubs.css 
+2013-06-26 12:06:28 identical css/ubs.css 
+2013-06-26 12:07:00 overwrite css/ubs.css 
+2013-06-26 12:10:33 overwrite css/ubs.css 
+2013-06-26 12:12:35 overwrite css/ubs.css 
+2013-06-26 12:14:59 overwrite css/ubs.css 
+2013-06-26 12:15:03 overwrite css/ubs.css 
+2013-06-26 12:18:39 overwrite css/ubs.css 
+2013-06-26 12:21:53 overwrite css/ubs.css 
+2013-06-26 12:21:59 overwrite css/ubs.css 
+2013-06-26 12:22:20 identical css/ubs.css 
+2013-06-26 12:24:26 overwrite css/ubs.css 
+2013-06-26 12:24:38 overwrite css/ubs.css 
+2013-06-26 12:24:47 overwrite css/ubs.css 
+2013-06-26 12:26:48 overwrite css/ubs.css 
+2013-06-26 12:27:05 overwrite css/ubs.css 
+2013-06-26 12:29:24 overwrite css/ubs.css 
+2013-06-26 12:29:42 overwrite css/ubs.css 
+2013-06-26 12:29:47 overwrite css/ubs.css 
+2013-06-26 12:30:02 overwrite css/ubs.css 
+2013-06-26 14:11:51 overwrite css/ubs.css 
+2013-06-26 14:32:19 overwrite css/ubs.css 
+2013-06-26 14:33:12 overwrite css/ubs.css 
+2013-06-26 14:33:15 overwrite css/ubs.css 
+2013-07-01 10:56:54 overwrite css/ubs.css 
+2013-07-01 10:56:55 overwrite css/ubs.css 

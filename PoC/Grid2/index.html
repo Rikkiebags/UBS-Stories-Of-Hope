@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    
+    <title>UBS</title>
+    
+    <link rel="stylesheet" type="text/css" href="assets/css/ubs.css" />
+    
+    <script type="text/javascript" src="http://fast.fonts.com/jsapi/d4aed7c1-d449-4171-a82c-7ac87594a56f.js"></script>
+    
+    <script src="assets/js/jquery-2.0.2.min.js"></script>
+
+    <script type="text/javascript" src="assets/js/jquery.localscroll-1.2.7-min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+    
+    <script type="text/javascript" src="assets/js/greensock/plugins/CSSPlugin.min.js"></script>
+    <script type="text/javascript" src="assets/js/greensock/easing/EasePack.min.js"></script>
+    <script type="text/javascript" src="assets/js/greensock/TweenMax.min.js"></script>
+    <script type="text/javascript" src="assets/js/greensock/TimelineMax.min.js"></script>
+   
+    
+    <script>
+    
+        $(document).ready(function(){
+            
+            var zIndexTop = 100;
+            
+          var data = {
+            "story" : [{
+                "name" : "Lorem ipsum1",
+                "top" : 88,
+                "left" : 206,
+                "width" : 127,
+                "height" : 116
+            }, {
+                "name" : "Lorem ipsum2",
+                "top" : 79,
+                "left" : 335,
+                "width" : 107,
+                "height" : 77
+            }, {
+                "name" : "Lorem ipsum3",
+                "top" : 206,
+                "left" : 98,
+                "width" : 235,
+                "height" : 161
+            }, {
+                "name" : "Lorem ipsum4",
+                "top" : 158,
+                "left" : 335,
+                "width" : 206,
+                "height" : 209
+            }, {
+                "name" : "Lorem ipsum5",
+                "top" : 369,
+                "left" : 286,
+                "width" : 101,
+                "height" : 98
+            }, {
+                "name" : "Lorem ipsum6",
+                "top" : 368,
+                "left" : 389,
+                "width" : 152,
+                "height" : 112
+            }, {
+                "name" : "Lorem ipsum7",
+                "top" : 239,
+                "left" : 543,
+                "width" : 172,
+                "height" : 156
+            }, {
+                "name" : "Lorem ipsum8",
+                "top" : 396,
+                "left" : 543,
+                "width" : 187,
+                "height" : 103
+            }, {
+                "name" : "Lorem ipsum9",
+                "top" : 287,
+                "left" : 717,
+                "width" : 167,
+                "height" : 107
+            }, {
+                "name" : "Lorem ipsum10",
+                "top" : 396,
+                "left" : 800,
+                "width" : 84,
+                "height" : 74
+            }, {
+                "name" : "Lorem ipsum11",
+                "top" : 326,
+                "left" : 886,
+                "width" : 75,
+                "height" : 95 
+            }]
+        };            
+            
+            $('#nav a').click(function() {
+               target = $(this).attr("href");
+               $(target).empty();
+               $(".viewport").scrollTo($(target),800, {onAfter:function(){
+                   initialiseFrame(target);
+               }}); 
+               return false;
+            });
+            
+            
+            
+            initialiseFrame("#section1");
+            
+
+        
+        function bringToFront($obj) {
+            $obj.css({'z-index': zIndexTop});
+            zIndexTop++;
+        };
+        
+        function initialiseFrame(section) {
+            
+        var tl = new TimelineLite();
+        
+        for (x = 0; x < data.story.length; x++) 
+        {       
+            var $content = $('<div/>', {
+                text: 'This is Tabitha from Wimborne',
+                class: 'content'
+            });            
+            
+            var $imgContainer = $('<div/>', {
+                css: {
+                    left: data.story[x].left - 40,
+                    top: data.story[x].top + 75,
+                    width: data.story[x].width,
+                    height: data.story[x].height
+                },
+                data: {
+                    'height': data.story[x].height,
+                    'width': data.story[x].width,
+                    'left': data.story[x].left - 40,
+                    'top': data.story[x].top + 75
+                },                
+                class: 'story'
+            })
+            .mouseenter(function() {
+                
+                var origWidth = (1/.7) * $(this).data('width');
+                var origHeight = (1/.7) * $(this).data('height');
+                var widthOffset = (origWidth - $(this).width()) / 2;
+                var heightOffset = (origHeight - $(this).height()) / 2;
+                var pos = $(this).position();
+                
+                TweenMax.to($(this), .5, {
+                    width: origWidth,
+                    height: origHeight,
+                    left: pos.left - widthOffset,
+                    top: pos.top - heightOffset,
+                    ease:Expo.easeOut
+                });
+                $(this).find("img").addClass("over");
+                $(this).find(".content").delay(250).slideDown();
+                
+                bringToFront($(this));
+                //console.log(widthOffset);
+            })
+            .mouseleave(function() {
+                
+                TweenMax.to($(this), .5, {
+                    width: $(this).data('width'),
+                    height: $(this).data('height'),
+                    left: $(this).data('left'),
+                    top: $(this).data('top'),
+                    ease:Expo.easeOut
+                });
+                $(this).find("img").removeClass("over");
+                $(this).find(".content").slideUp();                
+                
+            });
+
+            var $img = $('<img/>', {
+                src: 'assets/images/child' + (x+1) + '.png',
+                class: 'thumb thumb' + x
+            });
+            
+            $imgContainer.append($img).append($content).appendTo(section);
+            
+            //tl.to($(".thumb" + x), 1, {top:100});
+            //TweenMax.to($(".thumb" + x), 1, {delay:1, top:100});
+            //TweenMax.to($imgContainer, 1, {delay:0, top:100});
+            
+            var pos = $imgContainer.position();
+            var startTop = pos.top;
+            var startLeft = pos.left;
+
+            switch(Math.floor((Math.random()*4)+1))
+            {
+                case 1:
+                    startTop = 0 - $imgContainer.data('height');
+                    break; 
+                case 2:
+                    startLeft = 960 + $imgContainer.data('width');
+                    break; 
+                case 3:
+                    startTop = 612 + $imgContainer.data('height');
+                    break;
+                case 4:
+                    startLeft = 0 - $imgContainer.data('width');
+                    break;
+            }
+
+            tl.from($imgContainer, .5, {delay:0, top:startTop, left:startLeft, ease:Expo.easeOut}, "-=.25");
+            
+        }
+        
+        tl.play();            
+            
+        }
+        
+    });
+        
+    </script>
+
+</head>
+
+<body>
+    <div class="viewport">
+        
+        <ul id="nav">
+            <li><strong>Projects</strong></li>
+            <li><a href="#section1" title="Next Section">Philippines</a></li>
+            <li><a href="#section2" title="Next Section">China </a></li>
+            <li><a href="#section3" title="Next Section">South Africa</a></li>
+            <li><a href="#section4" title="Next Section">Peru</a></li>
+        </ul>
+        
+        <div id="section1" class="section">
+        </div>
+        <div id="section2" class="section">Boo</div>
+        <div id="section3" class="section">Foo</div>
+        <div id="section4" class="section">Moo</div>
+        
+    </div>
+</body>

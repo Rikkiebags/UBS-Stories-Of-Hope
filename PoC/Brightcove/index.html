@@ -1,0 +1,114 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>
+<meta charset="utf-8" />  
+<title>Blank HTML 5 Template</title>  
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+<script src="js/handlebars.js"></script>
+
+<script>
+
+        var player,
+    APIModules,
+    videoPlayer,
+        playerData = { "playerID" : "2742301719001",
+                   "playerKey" : "AQ~~,AAACfm5XIjk~,wfa5KO0aGyhPtNwau93jyXg1nOy9S2ei",
+                   "width" : "480",
+                   "height" : "270",
+                   "videoID" : "2742304996001" },
+        playerTemplate = "<div style=\"display:none\"></div><object id=\"myExperience\" class=\"BrightcoveExperience\"><param name=\"bgcolor\" value=\"#FFFFFF\" /><param name=\"width\" value=\"{{width}}\" /><param name=\"height\" value=\"{{height}}\" /><param name=\"playerID\" value=\"{{playerID}}\" /><param name=\"playerKey\" value=\"{{playerKey}}\" /><param name=\"isVid\" value=\"true\" /><param name=\"isUI\" value=\"true\" /><param name=\"dynamicStreaming\" value=\"true\" /><param name=\"@videoPlayer\" value=\"{{videoID}}\"; /><param name=\"includeAPI\" value=\"true\" /><param name=\"templateLoadHandler\" value=\"onTemplateLoad\" /><param name=\"templateReadyHandler\" value=\"onTemplateReady\" /></object>";
+
+
+        var onTemplateLoad = function(experienceID){
+            console.log("ONTEMPLATELOAD");
+          player = brightcove.api.getExperience(experienceID);
+          APIModules = brightcove.api.modules.APIModules;
+          //$(".play-me").text("WOO");
+        };
+     
+        var onTemplateReady = function(evt){
+            console.log("ONTEMPLATEREADY");
+            player = brightcove.api.getExperience(experienceID);
+          videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+          videoPlayer.play();
+        };        
+
+    
+    $(function() {
+        
+        
+        $(".load-me").click(function() {
+            //console.log(playerData);
+            template = Handlebars.compile(playerTemplate);
+            playerHTML = template(playerData);       
+            $("#my-player").html(playerHTML);
+            brightcove.createExperiences();
+        })
+
+        $(".pause-me").click(function() {
+            //console.log(playerData);
+            videoPlayer.pause();
+        })
+
+        $(".play-me").click(function() {
+            //console.log(playerData);
+            videoPlayer.pause(false);
+        })
+
+        
+        
+    });    
+    
+</script>
+
+</head>  
+<body>
+    
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+
+<!--<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>-->
+
+<object id="myExperience2742304996001" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="480" />
+  <param name="height" value="270" />
+  <param name="playerID" value="2742301719001" />
+  <param name="playerKey" value="AQ~~,AAACfm5XIjk~,wfa5KO0aGyhPtNwau93jyXg1nOy9S2ei" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+  <param name="@videoPlayer" value="2742304996001" />
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+
+
+<div id="my-player"></div>
+
+
+<button class="load-me" />Load Player</button>
+
+<button class="pause-me" />Pause</button>
+<button class="play-me" />Play</button>
+    
+    
+</body>
+</html>

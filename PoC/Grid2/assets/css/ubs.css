@@ -1,0 +1,109 @@
+/* line 15, ../sass/ubs.scss */
+body {
+  background-color: #ccc;
+  font-family: "Levato W01 Medium";
+  color: white;
+}
+
+/* line 21, ../sass/ubs.scss */
+a, a:link, a:visited, a:active {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+/* line 27, ../sass/ubs.scss */
+a:hover, a:link:hover, a:visited:hover, a:active:hover {
+  border-bottom: 1px solid #fff;
+}
+
+/* line 32, ../sass/ubs.scss */
+#nav {
+  list-style: none;
+  position: fixed;
+  left: 10px;
+  z-index: 1000;
+  background-color: #c60023;
+  padding: 10px;
+}
+/* line 40, ../sass/ubs.scss */
+#nav li {
+  margin: 0 0 10px 0;
+  opacity: 1;
+}
+/* line 44, ../sass/ubs.scss */
+#nav li a {
+  text-shadow: 0px 0px 1px #aaaaaa;
+}
+
+/* line 51, ../sass/ubs.scss */
+.viewport {
+  width: 960px;
+  height: 612px;
+  overflow: hidden;
+}
+
+/* line 57, ../sass/ubs.scss */
+#section1 {
+  background-image: url("../images/bg1.jpg");
+}
+
+/* line 58, ../sass/ubs.scss */
+#section2 {
+  background-image: url("../images/bg2.jpg");
+}
+
+/* line 59, ../sass/ubs.scss */
+#section3 {
+  background-image: url("../images/bg3.jpg");
+}
+
+/* line 60, ../sass/ubs.scss */
+#section4 {
+  background-image: url("../images/bg4.jpg");
+}
+
+/* line 62, ../sass/ubs.scss */
+.section {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 69, ../sass/ubs.scss */
+.story {
+  position: absolute;
+  cursor: pointer;
+}
+/* line 74, ../sass/ubs.scss */
+.story .thumb {
+  max-width: 100%;
+  max-height: 100%;
+}
+/* line 78, ../sass/ubs.scss */
+.story .thumb.over {
+  -webkit-box-shadow: grey 2px 2px 5px;
+  -moz-box-shadow: grey 2px 2px 5px;
+  box-shadow: grey 2px 2px 5px;
+}
+/* line 84, ../sass/ubs.scss */
+.story .content {
+  position: absolute;
+  display: none;
+  overflow: hidden;
+  bottom: 0px;
+  left: 0px;
+  color: #fff;
+  background: #c60023;
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+  font-size: 12px;
+  opacity: .8;
+  box-sizing: border-box;
+  pointer-events: none;
+}

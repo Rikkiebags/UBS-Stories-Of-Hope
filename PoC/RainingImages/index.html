@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="assets/css/ubs.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/modernizer-custom.js"></script>
+    <script type="text/javascript" src="http://fast.fonts.com/jsapi/d4aed7c1-d449-4171-a82c-7ac87594a56f.js"></script>
+    <!--[if IE 8]>
+        <link rel="stylesheet" type="text/css" href="assets/css/ie8.css" />
+    <![endif]-->
+    <!--[if IE 9]>
+        <link rel="stylesheet" type="text/css" href="assets/css/ie9.css" />
+    <![endif]-->
+    <title>UBS</title>
+</head>
+
+<body style="background-color:#ccc">
+    
+    <div id="canvas">
+        
+        <div class="hero-story">
+            <h1>Stories of hope</h1>
+            <p>Changing the lives of children through education, health and protection</p>
+            <p class="highlight">Choose a storyteller</p>
+        </div>
+        
+        
+    </div>
+    
+    <!-- JQUERY -->
+    <script src="js/jquery-2.0.2.min.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    
+    
+    <!-- TWEENMAX / LITE -->
+    <script type="text/javascript" src="js/greensock/plugins/CSSPlugin.min.js"></script>
+    <script type="text/javascript" src="js/greensock/easing/EasePack.min.js"></script>
+    <script type="text/javascript" src="js/greensock/TweenMax.min.js"></script>
+    
+    <script type="text/javascript">
+    
+        $(document).ready(function() {
+            
+            var myAnim = new Array();
+            var numObjects = 15;  
+            
+            for (x=1; x<numObjects+1; x++)
+            {
+                var posX = Math.floor(Math.random()*500+1);
+                var posY = Math.floor(Math.random()*1000-1000);
+                var scale = (Math.floor(Math.random() * (9 - 4)) + 5) / 10;
+                var zIndex = scale * 100;
+                var zIndexTop = 100;
+                var baseWidth = 225;
+                var canvasHeight = 450;
+                var canvasWidth = 960;
+
+                var $img = $('<img/>', {
+                    src: 'assets/images/thumbs/' + x + '.jpg',
+                    class: 'thumb'
+                });
+               
+                var $playbutton = $('<img/>', {
+                    src: 'assets/images/playbutton.png',
+                    class: 'play'
+                });
+               
+                var $closebutton = $('<div/>', {
+                    class: 'close'
+                }); 
+                
+                var $content = $('<div/>', {
+                    text: 'Lorem ipsum dolor sit amet',
+                    class: 'content'
+                });
+               
+                var $imgContainer = $('<div/>', {
+                        css: {
+                            left: posX,
+                            top: posY,
+                            width: baseWidth * scale,
+                            zIndex: zIndex
+                        },
+                        data: {
+                            'id': x,
+                            'scale': scale,
+                            'zIndex': zIndex
+                        },
+                        class: 'float img' + x                    
+                    })
+                    .mouseover(function() {
+                        //$(this).find('.content').delay(100).slideDown();
+                    })
+                    .click(function() {
+                        
+                        var id = $(this).data("id");
+                        var currScale = $(this).data("scale");
+                        var pos = $(this).position();
+                        var zIndex = $(this).data("zIndex");
+                        var top = pos.top;
+                        var oldTop = pos.top;
+                        
+                        //Check if top not fully visible
+                        if (pos.top < 0) {
+                            top = 0;
+                            oldTop = pos.top;
+                        }
+                        
+                        //Check if bottom not fully visible
+                        var totalHeight = (1/currScale) * $(this).height();
+                        if (pos.top + totalHeight > canvasHeight) {
+                            top = canvasHeight - totalHeight;
+                            oldTop = pos.top;
+                            //console.log(totalHeight);
+                        }
+                        
+                        //Set oldTop data so we know where to move back to if top or bottom
+                        $(this).data("oldTop", oldTop);
+                        //console.log("OLDTOP: " + $(this).data("oldTop"));
+                        
+                        //Work out the left hand offset
+                        var widthOffset = (((1/currScale) * $(this).width()) - $(this).width()) / 2;
+                        //console.log(widthOffset);
+                        $(this).data("left", pos.left);
+                        
+                        bringToFront($(this));
+                        //$(this).draggable();
+                        
+                        if (!$(this).hasClass("paused"))
+                        {
+                            $(this).addClass("paused").removeClass("effect");
+                            TweenMax.to($("#canvas .float:not(.paused)"), .5, {opacity:.25});
+                            $(this).find('.content').delay(100).slideDown();
+                            TweenLite.to($(this).find('.play'), .5, {css:{autoAlpha:.75}});
+                            TweenLite.to($(this).find('.close'), .5, {css:{autoAlpha:1}});
+                            $("#canvas .float:not(.paused)").addClass("effect");
+                            myAnim[id].pause();
+                            TweenMax.to($(".img" + id), .2, {width:baseWidth, top:top, left:pos.left - widthOffset,  opacity:1});
+                        }
+                    });
+                
+                $imgContainer.append($img)
+                    .append($playbutton)
+                    .append($closebutton)
+                    .append($content)
+                    .appendTo("#canvas");
+                
+                myAnim[x] = new TweenMax.to($imgContainer, getSpeed(scale), {
+                    css: {top:'500px'}, 
+                    onComplete: reinit,
+                    onCompleteParams: $imgContainer
+                });
+                    
+            }
+            
+            $(".play").click(function() {
+                    //Duplicate div and expand
+                    var $parent = $(this).parent();
+                    var pos = $parent.position();
+                    
+                    bringToFront($parent);
+                    
+                    var $transition = $('<div/>', {
+                           css: {
+                                left: pos.left,
+                                top: pos.top,
+                                width: $parent.width(),
+                                height: $parent.height()
+                           },           
+                           class: 'transition',
+                        });
+                        
+                    var transitionTween = new TweenLite.to($transition, .75, {top:0, left:0, width:canvasWidth, height:canvasHeight, autoAlpha:1, ease:Quad.easeIn, onComplete:pauseAllTweens});
+    
+                    var $closeContentButton = $('<div/>', {
+                            class: 'closecontent'
+                        })
+                        .click(function() {
+                            $closeContentButton.hide();
+                            transitionTween.reverse();
+                            restartTweens();
+                        }); 
+                   
+                    $closeContentButton.appendTo($transition);
+                    $("#canvas").append($transition);
+                    $closeContentButton.show();
+                    
+                })
+                .mouseover(function() {
+                    $(this).prev().addClass("active");    
+                })
+                .mouseout(function() {
+                    $(this).prev().removeClass("active");
+                });
+            
+            
+            
+            $(".close").click(function() {
+                
+                    var $parent = $(this).parent();
+                    var id = $parent.data("id");
+                    var currScale = $parent.data("scale");
+                    var pos = $parent.position();
+                    var zIndex = $parent.data("zIndex");
+                    var oldTop = $parent.data("oldTop");
+                    var oldLeft = $parent.data("left");
+                    
+                    $parent.removeClass("paused").css({'z-index': zIndex});
+                    
+                    if ($(".paused").length == 0) {
+                        $("#canvas .float.effect").removeClass("effect");
+                        TweenMax.to($("#canvas .float:not(.paused)"), .5, {opacity:1});
+                    }
+                    else
+                    {
+                        TweenMax.to($parent, .5, {opacity:.25});
+                        $parent.addClass("effect");
+                    };
+                    $parent.find('.content').slideUp('fast');
+                    
+                    var resume = function() {myAnim[id].resume()};
+                    TweenLite.to($(".img" + id), .2, {width:baseWidth * currScale, left:oldLeft, top:oldTop, onComplete:resume});
+                    TweenLite.to($parent.find('.play'), .2, {css:{autoAlpha:0}});
+                    TweenLite.to($(this), .2, {css:{autoAlpha:0}});
+                    
+                    return false;
+                    
+                })
+                .mouseover(function() {
+                    $(this).prev().prev().addClass("active");    
+                })
+                .mouseout(function() {
+                    $(this).prev().prev().removeClass("active");
+                });
+            
+            
+            function bringToFront($obj) {
+                $obj.css({'z-index': zIndexTop});
+                zIndexTop++;
+            }
+            
+            function reinit(obj) {
+                scale = $(obj).data("scale");
+                id = $(obj).data("id");
+                myAnim[id] = new TweenMax.fromTo($(obj), getSpeed(scale), {top:Math.floor(Math.random()*800-1000)}, {css:{top:'500px'}, repeat:-1});
+            }
+            
+            function getSpeed(scale){
+                return speed = (((1.1 - scale) * 20) * 3.5) + Math.random() * 5;                
+            }
+            
+            function pauseAllTweens() {
+                for (x=1; x<numObjects+1; x++)
+                {
+                    myAnim[x].pause(); 
+                }
+            }
+
+            function restartTweens() {
+                for (x=1; x<numObjects+1; x++)
+                {
+                    //console.log($(".img" + x).hasClass("paused"));
+                    if (!$(".img" + x).hasClass("paused")) {
+                        myAnim[x].play();
+                    };
+                }
+            }
+                        
+        });
+            
+       
+    </script>
+    
+</body>
+
+</html>

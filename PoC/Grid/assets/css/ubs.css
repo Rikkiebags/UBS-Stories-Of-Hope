@@ -1,0 +1,70 @@
+/* line 14, ../sass/ubs.scss */
+body {
+  font-family: "Levato W01 Medium";
+  color: white;
+}
+
+/* line 21, ../sass/ubs.scss */
+.parallax-viewport {
+  width: 100%;
+  max-width: 960px;
+  height: 612px;
+  background-color: #aebcc9;
+  background-image: url("../images/bg.jpg");
+  position: relative;
+}
+
+/* line 30, ../sass/ubs.scss */
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  pointer-events: none;
+}
+
+/* line 36, ../sass/ubs.scss */
+img {
+  position: absolute;
+  cursor: pointer;
+  pointer-events: all;
+  -webkit-transition: all 250ms ease-out;
+  -moz-transition: all 250ms ease-out;
+  -o-transition: all 250ms ease-out;
+  transition: all 250ms ease-out;
+  -webkit-transform: scale(0.7);
+  -moz-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  -o-transform: scale(0.7);
+  transform: scale(0.7);
+  border: 2px solid white;
+}
+/* line 44, ../sass/ubs.scss */
+img.active, img:hover {
+  border: 2px solid #c60023;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+
+/* line 50, ../sass/ubs.scss */
+.story {
+  position: absolute;
+}
+
+/* line 54, ../sass/ubs.scss */
+.rollover {
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: #c60023;
+  display: none;
+  opacity: .8;
+  padding: 20px;
+  overflow: hidden;
+  border: 2px solid #c60023;
+}
+/* line 65, ../sass/ubs.scss */
+.rollover h2 {
+  margin-top: 0;
+}

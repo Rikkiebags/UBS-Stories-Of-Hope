@@ -1,0 +1,101 @@
+@import "compass/css3/box-shadow";
+@import "compass/css3/filter";
+@import "compass/css3/transition";
+@import "compass/css3/transform";
+@import "compass/css3/text-shadow";
+@import "compass/utilities/general/clearfix";
+
+//@import "icons/*.png";
+
+$levato-med-italic: 'LevatoW01-MediumItalic';
+$levato-med: 'Levato W01 Medium';
+
+$red: #c60023;
+
+body {
+  background-color: #ccc;
+  font-family: $levato-med;
+  color: white;
+}
+
+a, a:link, a:visited, a:active {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  @include transition();
+  
+  &:hover {
+    border-bottom: 1px solid #fff;
+  }
+}
+
+#nav {
+  list-style: none;
+  position: fixed;
+  left: 10px;
+  z-index: 1000;
+  background-color: $red;
+  padding: 10px;
+  
+  li {
+    margin: 0 0 10px 0;
+    opacity:1;
+    
+    a {
+      @include text-shadow();
+    }
+  }
+}
+
+
+.viewport {
+  width:960px;
+  height: 612px;
+  overflow: hidden;
+}
+
+#section1 {background-image: url('../images/bg1.jpg')}
+#section2 {background-image: url('../images/bg2.jpg')}
+#section3 {background-image: url('../images/bg3.jpg')}
+#section4 {background-image: url('../images/bg4.jpg')}
+
+.section {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative; 
+}
+
+.story {
+  position: absolute;
+  cursor: pointer;
+
+  
+  .thumb {
+    max-width:100%; 
+    max-height:100%;
+    
+    &.over {
+      @include box-shadow(grey 2px 2px 5px);
+    }
+      
+  }
+  
+  .content {
+    position:absolute; 
+    display:none; 
+    overflow:hidden; 
+    bottom: 0px;
+    left: 0px; 
+    color: #fff; 
+    background: $red; 
+    width:100%;
+    height: 100%;
+    padding:4px; 
+    font-size:12px;
+    opacity:.8;
+    box-sizing: border-box;     
+    pointer-events: none;  
+  }
+  
+}

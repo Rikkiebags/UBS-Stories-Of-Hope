@@ -1,0 +1,132 @@
+/* line 50, icons/*.png */
+.icons-sprite, #canvas .close, #canvas .closecontent, #canvas .close:hover, #canvas .closecontent:hover {
+  background: url('../images/icons-s5b9c749915.png') no-repeat;
+}
+
+/* line 12, ../sass/ubs.scss */
+body {
+  font-family: "Levato W01 Medium";
+  font-size: 12px;
+}
+
+/* line 17, ../sass/ubs.scss */
+h1 {
+  color: #c60023;
+  font-size: 32px;
+  font-family: "LevatoW01-MediumItalic";
+  margin-top: 0;
+}
+
+/* line 24, ../sass/ubs.scss */
+#canvas {
+  width: 960px;
+  height: 450px;
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
+  background-image: url("../images/bg1.jpg");
+}
+/* line 32, ../sass/ubs.scss */
+#canvas .hero-story {
+  position: absolute;
+  background-color: #fff;
+  color: #000;
+  padding: 20px;
+  margin-bottom: 4px;
+  width: 300px;
+  left: 600px;
+  top: 100px;
+  -webkit-box-shadow: grey 2px 2px 5px;
+  -moz-box-shadow: grey 2px 2px 5px;
+  box-shadow: grey 2px 2px 5px;
+}
+/* line 44, ../sass/ubs.scss */
+#canvas .float {
+  position: absolute;
+  cursor: pointer;
+}
+/* line 50, ../sass/ubs.scss */
+#canvas .float img.thumb {
+  max-width: 100%;
+  max-height: 100%;
+  -webkit-box-shadow: grey 2px 2px 5px;
+  -moz-box-shadow: grey 2px 2px 5px;
+  box-shadow: grey 2px 2px 5px;
+  border: 4px solid white;
+  -webkit-transition: border 250ms ease-out;
+  -moz-transition: border 250ms ease-out;
+  -o-transition: border 250ms ease-out;
+  transition: border 250ms ease-out;
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+/* line 60, ../sass/ubs.scss */
+#canvas .float img.thumb.active, #canvas .float img.thumb:hover {
+  border: 4px solid #c60023;
+}
+/* line 65, ../sass/ubs.scss */
+#canvas .float img.play {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  visibility: hidden;
+  cursor: pointer;
+}
+/* line 77, ../sass/ubs.scss */
+#canvas .float.paused {
+  cursor: auto;
+}
+/* line 81, ../sass/ubs.scss */
+#canvas .float.effect img.thumb {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+/* line 87, ../sass/ubs.scss */
+#canvas .float .content {
+  position: absolute;
+  display: none;
+  overflow: hidden;
+  bottom: 4px;
+  left: 4px;
+  color: #fff;
+  font-weight: bold;
+  background: #ff0000;
+  width: 100%;
+  text-align: center;
+  padding: 4px;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+/* line 104, ../sass/ubs.scss */
+#canvas .close, #canvas .closecontent {
+  position: absolute;
+  right: 0px;
+  top: 10px;
+  width: 17px;
+  height: 19px;
+  visibility: hidden;
+  cursor: pointer;
+  background-position: 0 -19px;
+}
+/* line 114, ../sass/ubs.scss */
+#canvas .close:hover, #canvas .closecontent:hover {
+  background-position: 0 0;
+}
+/* line 119, ../sass/ubs.scss */
+#canvas .transition {
+  position: absolute;
+  background-color: #F6DBA8;
+  padding-right: 8px;
+  z-index: 1000;
+  visibility: hidden;
+}
+/* line 126, ../sass/ubs.scss */
+#canvas .transition .closecontent {
+  right: 10px;
+  visibility: visible;
+}

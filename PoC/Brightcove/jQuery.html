@@ -1,0 +1,282 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en">
+        <title>jQuery Brightcove Video Plugin - EXAMPLE</title>
+        <meta charset="utf-8">
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery.brightcove-video.js"></script>
+        
+        
+<style>
+
+.floating-circles {
+position:relative;
+width:128px;
+height:128px;
+-moz-transform:scale(0.6);
+-webkit-transform:scale(0.6);
+-ms-transform:scale(0.6);
+-o-transform:scale(0.6);
+transform:scale(0.6);
+}
+
+.f_circleG{
+position:absolute;
+background-color:#FFFFFF;
+height:23px;
+width:23px;
+-moz-border-radius:12px;
+-moz-animation-name:f_fadeG;
+-moz-animation-duration:1.04s;
+-moz-animation-iteration-count:infinite;
+-moz-animation-direction:linear;
+-webkit-border-radius:12px;
+-webkit-animation-name:f_fadeG;
+-webkit-animation-duration:1.04s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-direction:linear;
+-ms-border-radius:12px;
+-ms-animation-name:f_fadeG;
+-ms-animation-duration:1.04s;
+-ms-animation-iteration-count:infinite;
+-ms-animation-direction:linear;
+-o-border-radius:12px;
+-o-animation-name:f_fadeG;
+-o-animation-duration:1.04s;
+-o-animation-iteration-count:infinite;
+-o-animation-direction:linear;
+border-radius:12px;
+animation-name:f_fadeG;
+animation-duration:1.04s;
+animation-iteration-count:infinite;
+animation-direction:linear;
+}
+
+#frotateG_01{
+left:0;
+top:52px;
+-moz-animation-delay:0.39s;
+-webkit-animation-delay:0.39s;
+-ms-animation-delay:0.39s;
+-o-animation-delay:0.39s;
+animation-delay:0.39s;
+}
+
+#frotateG_02{
+left:15px;
+top:15px;
+-moz-animation-delay:0.52s;
+-webkit-animation-delay:0.52s;
+-ms-animation-delay:0.52s;
+-o-animation-delay:0.52s;
+animation-delay:0.52s;
+}
+
+#frotateG_03{
+left:52px;
+top:0;
+-moz-animation-delay:0.65s;
+-webkit-animation-delay:0.65s;
+-ms-animation-delay:0.65s;
+-o-animation-delay:0.65s;
+animation-delay:0.65s;
+}
+
+#frotateG_04{
+right:15px;
+top:15px;
+-moz-animation-delay:0.78s;
+-webkit-animation-delay:0.78s;
+-ms-animation-delay:0.78s;
+-o-animation-delay:0.78s;
+animation-delay:0.78s;
+}
+
+#frotateG_05{
+right:0;
+top:52px;
+-moz-animation-delay:0.91s;
+-webkit-animation-delay:0.91s;
+-ms-animation-delay:0.91s;
+-o-animation-delay:0.91s;
+animation-delay:0.91s;
+}
+
+#frotateG_06{
+right:15px;
+bottom:15px;
+-moz-animation-delay:1.04s;
+-webkit-animation-delay:1.04s;
+-ms-animation-delay:1.04s;
+-o-animation-delay:1.04s;
+animation-delay:1.04s;
+}
+
+#frotateG_07{
+left:52px;
+bottom:0;
+-moz-animation-delay:1.17s;
+-webkit-animation-delay:1.17s;
+-ms-animation-delay:1.17s;
+-o-animation-delay:1.17s;
+animation-delay:1.17s;
+}
+
+#frotateG_08{
+left:15px;
+bottom:15px;
+-moz-animation-delay:1.3s;
+-webkit-animation-delay:1.3s;
+-ms-animation-delay:1.3s;
+-o-animation-delay:1.3s;
+animation-delay:1.3s;
+}
+
+@-moz-keyframes f_fadeG{
+0%{
+background-color:#000000}
+
+100%{
+background-color:#FFFFFF}
+
+}
+
+@-webkit-keyframes f_fadeG{
+0%{
+background-color:#000000}
+
+100%{
+background-color:#FFFFFF}
+
+}
+
+@-ms-keyframes f_fadeG{
+0%{
+background-color:#000000}
+
+100%{
+background-color:#FFFFFF}
+
+}
+
+@-o-keyframes f_fadeG{
+0%{
+background-color:#000000}
+
+100%{
+background-color:#FFFFFF}
+
+}
+
+@keyframes f_fadeG{
+0%{
+background-color:#000000}
+
+100%{
+background-color:#FFFFFF}
+
+} 
+
+</style>        
+
+        <script>
+        $( function() {
+            
+            
+                $("#load, .player-overlay").click(function() {
+                    $(".play").hide();
+                    $(".floating-circles").fadeIn();
+                    $( ".player" ).brightcoveVideo({
+                            "playerID": "2742301719001",
+                            "@videoPlayer": "2742304996001",
+                            "templateReadyHandler": onTemplateReady
+                    });
+                }) 
+
+                // Initialize the jQuery Brightcove Video plugin
+                // On TEMPLATE_READY (The player is ready for interaction through API)
+                function onTemplateReady( event ) {
+                    
+                        console.log("Player Loaded!");
+                        
+                        $(".player-overlay").hide(function() {
+                            $(".play").show();
+                            $(".floating-circles").hide();
+                        });
+                    
+                        var $player = $(".player");
+                        
+                        $player.brightcoveVideo("play");
+
+                        // On PLAY (The player has begun or resumed playback)
+                        /*$player.brightcoveVideo( "onMediaEvent", "PLAY", function(event) {
+                                console.log("Playing that vid");
+
+                                // Pause after 3 seconds
+                                /*setTimeout( function() {
+                                        $player.brightcoveVideo( "pause" );
+                                        alert( "Pause after 3 seconds" );
+                                }, 3000 );*/
+                        //});
+
+                        $player.brightcoveVideo( "onMediaEvent", "COMPLETE", function(event) {
+                                console.log("VID FINISHED");
+                                $(".player-overlay").fadeIn(function() {
+                                    $player.brightcoveVideo("destroy");
+                                });
+                        });                        
+                        
+                        // Append an image on top of the player, fading out on click
+                        /*$player.brightcoveVideo( "overlay", "<img src='http://goo.gl/hR0kK'>" )
+                                .on( "click", function() { $(this).fadeOut() } );*/
+                                
+                        $("#play").click(function() {
+                            console.log("WOO");
+                            $player.brightcoveVideo("play");
+                        });
+                        
+                        $("#destroy").click(function() {
+                            console.log("DESTROY!");
+                            $(".player-overlay").fadeIn();
+                            $player.brightcoveVideo("destroy");
+                        })                        
+                        
+                }
+        } );
+        </script>
+        
+        
+</head>
+<body style="background: url('img/main.jpg')">
+    
+    <div style="position:relative;height:240px">
+        <div class="player" style="position: absolute; height:248px; width:440px;"></div>
+            <div class="player-overlay" style="cursor: pointer; position: absolute; height:248px; width:440px; background: rgba(255,255,255,0.2);">
+            <div class="play" style="background: url('img/play_white.png') center no-repeat; width:100%; height:100%; position:absolute"></div>
+            <div class="floating-circles" style="position:absolute; top:55px; left:156px; display:none;">
+                <div class="f_circleG" id="frotateG_01">
+                </div>
+                <div class="f_circleG" id="frotateG_02">
+                </div>
+                <div class="f_circleG" id="frotateG_03">
+                </div>
+                <div class="f_circleG" id="frotateG_04">
+                </div>
+                <div class="f_circleG" id="frotateG_05">
+                </div>
+                <div class="f_circleG" id="frotateG_06">
+                </div>
+                <div class="f_circleG" id="frotateG_07">
+                </div>
+                <div class="f_circleG" id="frotateG_08">
+                </div>
+            </div>                  
+        </div>
+    </div>        
+    
+    <a href="#" id="load">Load</a><br/>
+    <a href="#" id="play">Play</a><br/>
+    <a href="#" id="destroy">Destroy</a>
+    
+</body>
+</html>
